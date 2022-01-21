@@ -198,7 +198,7 @@
                         <h1 class="font-semibold text-xl text-gray-800 leading-tight mt-2">{{ "DRIVER'S LICENSE VEHICLE CATEGORY" }}</h1>
 
                         <div class="mt-4">
-                            <x-label for="name" :value="__('Vehicle Conditions')" />
+                            <x-label for="name" :value="__('Vehicle Category')" />
 
                             <select name="vehicle_category" required>
                                 @foreach ($vehicle_categories as $vehicle_category)
