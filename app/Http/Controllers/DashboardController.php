@@ -12,10 +12,10 @@ class DashboardController extends Controller
     {
 
         //Check authenticated user status
-        if(Auth()->user()->status == 'Pending')
-        {
-            return view('account.pending');
-        }
+        // if(Auth()->user()->status == 'Pending')
+        // {
+        //     return view('account.pending');
+        // }
 
         $users = User::orderBy('id', 'desc')->get();
 
