@@ -86,8 +86,10 @@ class AccountController extends Controller
             'first_name'            => $request->first_name,
             'last_name'             => $request->last_name,
             'contact_number'        => $request->contact_number,
-            'email'                 => $user->email
+            'email'                 => $request->email
         ]);
+
+        \Session::flash('success-account', 'Account details successfully updated!');
 
         return redirect()->route('user.index');
     }
@@ -115,6 +117,19 @@ class AccountController extends Controller
             'password'  => Hash::make($request->password)
         ]);
 
+        \Session::flash('success-password', 'Account password successfully updated!');
+
         return redirect()->back();
     }
+
+    public function approveOrDecline(User $user)
+    {
+        $user->update([
+            'status' => ($user->status == 'Accept') ? 'Reject' : 'Accept',
+        ]);
+
+        return redirect()->back();
+    }
+
+
 }

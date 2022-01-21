@@ -1,13 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Applicants') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <h1 class="font-semibold text-lg text-gray-800 leading-tight">List of Applicants who submit</h1>
+            <h1 class="font-semibold text-lg text-gray-800 leading-tight"><a href="{{ route('search') }}">Search Here</a></h1>
         </div>
 
         @forelse ($forms as $form)
@@ -16,6 +16,7 @@
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200">
                             {{ ucwords($form->user->last_name) }}, {{ ucwords($form->user->first_name) }}
+                            <span>- {{ $form->created_at->diffForHumans() }}</span>
                         </div>
                     </div>
                 </div>

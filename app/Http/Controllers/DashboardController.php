@@ -10,10 +10,17 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $forms = Form::all();
+
+        //Check authenticated user status
+        if(Auth()->user()->status == 'Pending')
+        {
+            return view('account.pending');
+        }
+
+        $users = User::orderBy('id', 'desc')->get();
 
         if(Auth()->user()->hasRole('admin')){
-            return view('dashboard', compact('forms'));
+            return view('dashboard', compact('users'));
         }
 
         return redirect()->route('form.lto');

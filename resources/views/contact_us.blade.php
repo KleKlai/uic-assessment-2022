@@ -43,6 +43,7 @@
 
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
                             <h1>List of LTO Branches</h1>
+                            <img src="{{ asset('assets/images/Banner_contactus.jpg') }}" alt="">
                             <img src="{{ asset('assets/images/map.png') }}" alt="">
                         </div>
                     </div>

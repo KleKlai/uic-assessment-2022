@@ -19,19 +19,19 @@ use App\Http\Controllers\ApplicantController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/services', function () {
     return view('services');
-});
+})->name('services');
 
 Route::get('/contact_us', function () {
     return view('contact_us');
-});
+})->name('contact_us');
 
 Route::get('/technology', function () {
     return view('Technology');
-});
+})->name('technology');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -44,6 +44,7 @@ Route::middleware(['auth'])->group(function () {
     // Account Management
     Route::resource('/user', AccountController::class);
     Route::post('/password/{user}', [AccountController::class, 'updatePassword'])->name('password');
+    Route::get('/account-verify/{user}', [AccountController::class, 'approveOrDecline'])->name('account.verify');
 
     // Form
     Route::get('/forms', [FormController::class, 'index'])->name('form.lto');
@@ -54,7 +55,9 @@ Route::middleware(['auth'])->group(function () {
 
     // Applicants
     Route::get('/applicants', [ApplicantController::class, 'index'])->name('applicants');
-});
+    Route::get('/applicants-search', [ApplicantController::class, 'search'])->name('search');
+    Route::post('/applicants-search', [ApplicantController::class, 'show'])->name('applicants-show');
 
+});
 
 require __DIR__.'/auth.php';

@@ -7,8 +7,13 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+
+                    @if(Session::has('success-account'))
+                        <p class="text-sm text-green-600">{{ Session::get('success-account') }}</p>
+                    @endif
 
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -64,6 +69,10 @@
         <div class="max-w-7xl mt-3 mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+
+                    @if(Session::has('success-password'))
+                        <p class="text-sm text-green-600">{{ Session::get('success-password') }}</p>
+                    @endif
 
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />

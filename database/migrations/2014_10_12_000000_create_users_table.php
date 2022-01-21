@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->boolean('status')->default(true);
+            $table->enum('status', ['Accept', 'Reject', 'Pending'])->default('Pending');
             $table->rememberToken();
             $table->timestamps();
         });
