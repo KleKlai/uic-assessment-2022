@@ -46,6 +46,9 @@ class LTOFormRequest extends FormRequest
             'eye_color'                         => 'required',
             'vehicle_category'                  => 'required',
             'vehicle_conditions'                => 'required',
+            'fathers_name'                      => 'required',
+            'mothers_name'                      => 'required',
+            'spouse_name'                       => 'required',
         ];
     }
 }

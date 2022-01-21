@@ -40,6 +40,9 @@ class CreateFormsTable extends Migration
             $table->string('eye_color');
             $table->string('vehicle_category');
             $table->string('vehicle_conditions');
+            $table->string('fathers_name');
+            $table->string('mothers_name');
+            $table->string('spouse_name');
             $table->enum('status', ['Approved', 'Decline', 'Pending'])->default('Pending');
             $table->timestamps();
         });

@@ -92,6 +92,24 @@
                         </div>
 
                         <div class="mt-4">
+                            <x-label for="name" :value="__('Fathers Name')" />
+
+                            <x-input id="name" class="block mt-1 w-full" type="text" name="fathers_name" :value="old('fathers_name')" required autofocus />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-label for="name" :value="__('Mothers Name')" />
+
+                            <x-input id="name" class="block mt-1 w-full" type="text" name="mothers_name" :value="old('mothers_name')" required autofocus />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-label for="name" :value="__('Spouse_Name')" />
+
+                            <x-input id="name" class="block mt-1 w-full" type="text" name="spouse_name" :value="old('spouse_name')" required autofocus />
+                        </div>
+
+                        <div class="mt-4">
                             <x-label for="name" :value="__('Civil Status')" />
 
                             <select name="lca" required>
